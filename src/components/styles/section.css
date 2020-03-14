@@ -1,0 +1,85 @@
+/* .bgCont {
+  position: relative;
+  margin: 50px;
+}
+
+.bgPic {
+  background-attachment: local;
+  background-size: contain;
+  border: 5px solid red;
+  background-color: #c8c8c8;
+  text-shadow: 4px 4px 4px red;
+} */
+
+.LeftSide {
+}
+
+.LeftSide .picsWrp {
+  align-self: center;
+}
+
+.RightSide {
+}
+
+.RightSide .picsWrp {
+  align-self: center;
+}
+
+.innerSectionWrp {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  height: 100%;
+}
+
+.picsWrp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.textWrp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.LeftSide .textWrp {
+  flex: 2;
+}
+
+.LeftSide .picsWrp {
+  flex: 1;
+}
+
+.RightSide .textWrp {
+  justify-content: center;
+  flex: 1;
+}
+
+.RightSide .picsWrp {
+  flex: 2;
+}
+
+/* about coffe shop txt header */
+
+.AboutTxt {
+  color: #000;
+  text-align: center;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 3em !important;
+}
+
+.AbTxt1 {
+  color: #f9cc41;
+  text-align: center;
+  font-size: 3rem !important;
+}
+
+.AbTxt2 {
+  color: #f9cc41;
+  text-align: center;
+  font-size: 3rem !important;
+}

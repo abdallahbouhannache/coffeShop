@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./navbar/";
+import Carousel from "./components/elements/Carousel/Carousel";
+import { SectionLayout } from "./components/layout/index";
+import imgsc from "./assets/dish.jpg";
+import altpic1 from "./assets/bg2.jpg";
+import altpic2 from "./assets/bg3.jpg";
+import altpic3 from "./assets/bg4.jpg";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <SectionLayout imgsrc={[imgsc, altpic1, altpic2, altpic3]} />
+
+      <Carousel />
     </div>
   );
 }
