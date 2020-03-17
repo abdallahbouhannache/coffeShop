@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "./components/navbar/Navbar";
-
 import GlobalStyle from "./styles/Global";
 
 class index extends Component {

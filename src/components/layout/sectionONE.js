@@ -67,10 +67,9 @@ class sectionONE extends Component {
       backgroundRepeat: "no-repeat",
       backgroundAttachment: "fixed",
       width: "100%",
-      height: "60vh",
+      height: "100%",
       display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between"
+      flexDirection: "column"
     },
     wclTxt: {
       color: "#000",
@@ -92,12 +91,13 @@ class sectionONE extends Component {
       color: "#ffc403a9",
       textAlign: "center",
       textShadow: " 3px 3px 3px #000",
+      fontSize: "3em",
       alignSelf: "center",
-      fontFamily: "'Shojumaru', cursive",
+      fontFamily: "Bungee Inline, cursive  ",
       position: "relative",
       display: "flex",
       width: "100%",
-      height: "100%",
+      height: "60vh",
       justifyContent: "center",
       alignItems: "center"
     },
@@ -128,7 +128,7 @@ class sectionONE extends Component {
                 <Article
                   paraWrp="paraWrpStyle"
                   artWrp="artWrpStyle"
-                  headContent={"Coffe beans from Urgway"}
+                  headContent={"Coffe beans from brazil"}
                 />
               </div>
             </div>
@@ -156,7 +156,6 @@ class sectionONE extends Component {
             <Header style={this.styling.AboutTxt} size="huge" as="h1">
               Menu Of Coffee
             </Header>
-
             <NavMenu />
           </div>
         </div>
