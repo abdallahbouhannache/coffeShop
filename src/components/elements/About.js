@@ -84,8 +84,8 @@ class Contact extends PureComponent {
             />
           </h1>
           <h1>
-            Service de valet jeudi, vendredi et samedi soir offert par{" "}
-            <strong>Valet Québec</strong>.
+            Service de Coffe est disponible toujours et offert par :
+            <strong>Coffee Groupe</strong>.
           </h1>
         </div>
       </div>

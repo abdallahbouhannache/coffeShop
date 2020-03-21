@@ -9,12 +9,12 @@ import altpic1 from "./assets/bg2.jpg";
 import altpic2 from "./assets/bg3.jpg";
 import altpic3 from "./assets/bg4.jpg";
 import Form from "./components/elements/Form";
-import Contact from "./components/elements/Contact";
+import About from "./components/elements/About";
 
 function App() {
   const config = {
     api: `${process.env.REACT_APP_API}`,
-    title: "Contact Me",
+    title: "Contact Us",
     successMessage: "Thank you for contcting me.",
     errorMessage: "Sorry we have some problems.",
     fields: {
@@ -68,7 +68,7 @@ function App() {
       <SectionLayout imgsrc={[imgsc, altpic1, altpic2, altpic3]} />
 
       {/* <Carousel /> */}
-      <Contact />
+      {/* <About></About> */}
       <Form config={config} />
       {/* <div className="test">
       </div> */}

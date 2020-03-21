@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import About from "./About";
+
 // import axios from "axios";
 
 /**
@@ -61,9 +63,9 @@ class Form extends React.Component {
       fieldsConfig
     } = this.props.config;
     return (
-      <div className="FormWrp">
-        <h2>{title}</h2>
-        <div>
+      <div className="FormContainer">
+        <div className="FormWrp">
+          <h2>{title}</h2>
           <form action="#">
             {fieldsConfig &&
               fieldsConfig.map(field => {
@@ -71,7 +73,7 @@ class Form extends React.Component {
                   <React.Fragment key={field.id}>
                     {field.type !== "textarea" ? (
                       <React.Fragment>
-                        <label>{field.label}</label>
+                        <label>{field.label} :</label>
                         <input
                           type={field.type}
                           className={field.klassName}
@@ -82,7 +84,7 @@ class Form extends React.Component {
                       </React.Fragment>
                     ) : (
                       <React.Fragment>
-                        <label>{field.label}</label>
+                        <label>{field.label}:</label>
                         <textarea
                           className={field.klassName}
                           placeholder={field.placeholder}
@@ -99,6 +101,7 @@ class Form extends React.Component {
               onClick={e => this.handleFormSubmit(e)}
               value="Submit"
             />
+
             <div>
               {this.state.mailSent && (
                 <div className="sucsess">{successMessage}</div>
@@ -107,6 +110,7 @@ class Form extends React.Component {
             </div>
           </form>
         </div>
+        <About />
       </div>
     );
   }
