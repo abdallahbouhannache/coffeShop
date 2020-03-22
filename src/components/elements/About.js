@@ -83,7 +83,7 @@ class Contact extends PureComponent {
               alt="Map"
             />
           </h1>
-          <h1>
+          <h1 style={{ fontSize: "2.5vmin", marginBottom: "20px" }}>
             Service de Coffe est disponible toujours et offert par :
             <strong>Coffee Groupe</strong>.
           </h1>

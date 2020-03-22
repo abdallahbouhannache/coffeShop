@@ -22,7 +22,7 @@ const Navbar = props => {
 
   return (
     <>
-      <NavBar style={barAnimation}>
+      <NavBar id="navbar" style={barAnimation}>
         <FlexContainer>
           <Brand />
           <NavLinks style={linkAnimation}>
@@ -57,6 +57,7 @@ const NavBar = styled(animated.nav)`
   background: #0c1011b4;
   z-index: 1;
   font-size: 1.4rem;
+  transition: all 0.33s ease-in-out;
 `;
 
 const FlexContainer = styled.div`

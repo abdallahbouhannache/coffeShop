@@ -13,7 +13,7 @@ const Article = props => {
           <Header as="h1" className="headArt">
             {props.headContent || ""}
           </Header>
-          <p className="paraWrp">
+          <p className="paraWrp" align="justify">
             {props.paragraph ||
               "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo" +
                 "ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et" +

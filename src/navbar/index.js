@@ -13,13 +13,13 @@ class index extends Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <Navbar
           navbarState={this.state.navbarOpen}
           handleNavbar={this.handleNavbar}
         />
         <GlobalStyle />
-      </>
+      </React.Fragment>
     );
   }
 }

@@ -53,7 +53,7 @@ class sectionONE extends Component {
       backgroundRepeat: "no-repeat",
       backgroundAttachment: "fixed",
       width: "100%",
-      height: "110em",
+      height: "100%",
       padding: 0,
       margin: 0,
       display: "flex",
@@ -74,7 +74,7 @@ class sectionONE extends Component {
     wclTxt: {
       color: "#000",
       textAlign: "center",
-      fontSize: "7em",
+      fontSize: "4.7vw",
       textShadow: " 3px 3px 3px #F9CC41",
       alignSelf: "center",
       fontFamily: "'Shojumaru', cursive"
@@ -82,47 +82,36 @@ class sectionONE extends Component {
     subWclTxt: {
       color: "#000",
       textAlign: "center",
-      fontSize: "3.6rem",
+      fontSize: "3.5vmin",
       textShadow: " 6px 6px 3px #F9CC41",
       alignSelf: "center",
       fontFamily: "'Shojumaru', cursive"
-    },
-    AboutTxt: {
-      color: "#ffc403a9",
-      textAlign: "center",
-      textShadow: " 3px 3px 3px #000",
-      fontSize: "3em",
-      alignSelf: "center",
-      fontFamily: "Bungee Inline, cursive  ",
-      position: "relative",
-      display: "flex",
-      width: "100%",
-      height: "60vh",
-      justifyContent: "center",
-      alignItems: "center"
-    },
-    imgwrp: {
-      width: "100%",
-      height: "100%"
     }
   };
   render() {
     return (
       <React.Fragment>
-        <div style={this.styling.wraper}>
+        <div className="helping" style={this.styling.wraper}>
           <div className="part1" style={this.styling.part1}>
-            <Header style={this.styling.wclTxt} size="huge" as="h1">
+            <Header style={this.styling.wclTxt} as="h1">
               CoffeShop
               <Header.Subheader style={this.styling.subWclTxt}>
                 Feel The Taste Of Joy
               </Header.Subheader>
             </Header>
           </div>
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
+
           <div className="part2" style={this.styling.part2}>
             <div className="innerSectionWrp LeftSide ">
               <div className="picsWrp">
-                <Image src={altpic} size="tiny" style={this.styling.imgwrp} />
-                <Image src={altpic1} size="tiny" style={this.styling.imgwrp} />
+                <Image src={altpic} className="imgwrp" />
+                <Image src={altpic1} className="imgwrp" />
               </div>
               <div className="textWrp">
                 <Article
@@ -133,29 +122,38 @@ class sectionONE extends Component {
               </div>
             </div>
             {/* ...... */}
+            {/* ...... */}
             <div className="innerSectionWrp RightSide ">
               <div className="textWrp">
                 <Header as="h1" className="AboutTxt">
                   <Header.Subheader className="AbTxt1">
                     ............................
                   </Header.Subheader>
-                  About CoffeeShop
+
+                  <Header.Subheader className="AbTxt">
+                    About CoffeeShop
+                  </Header.Subheader>
+
                   <Header.Subheader className="AbTxt2">
                     ............................
                   </Header.Subheader>
                 </Header>
               </div>
               <div className="picsWrp">
-                <Image src={altpic2} style={this.styling.imgwrp} />
-                <Image src={altpic3} style={this.styling.imgwrp} />
-                <Image src={altpic4} style={this.styling.imgwrp} />
+                <Image src={altpic2} className="imgwrp" />
+                <Image src={altpic3} className="imgwrp" />
+                <Image src={altpic4} className="imgwrp" />
               </div>
             </div>
           </div>
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
+          {/* ...... */}
           <div className="part3" style={this.styling.part3}>
-            <Header style={this.styling.AboutTxt} size="huge" as="h1">
-              Menu Of Coffee
-            </Header>
+            <Header className="navMenuHeader">Menu Of Coffee</Header>
             <NavMenu />
           </div>
         </div>

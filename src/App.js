@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./navbar/";
@@ -10,6 +10,7 @@ import altpic2 from "./assets/bg3.jpg";
 import altpic3 from "./assets/bg4.jpg";
 import Form from "./components/elements/Form";
 import About from "./components/elements/About";
+import $ from "jquery";
 
 function App() {
   const config = {
@@ -62,6 +63,22 @@ function App() {
       }
     ]
   };
+
+  useEffect(() => {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        // $("#navbar")[0].style.top = "0";
+        $("#navbar")[0].classList.add("navHide");
+      } else {
+        // $("#navbar")[0].style.top = "-10em";
+        $("#navbar")[0].classList.remove("navHide");
+      }
+      // console.log($("#navbar")[0].classList.add("navHide"));
+      prevScrollpos = currentScrollPos;
+    };
+  }, []);
   return (
     <div className="App">
       <Navbar />
