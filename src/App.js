@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./navbar/";
@@ -9,7 +9,7 @@ import altpic1 from "./assets/bg2.jpg";
 import altpic2 from "./assets/bg3.jpg";
 import altpic3 from "./assets/bg4.jpg";
 import Form from "./components/elements/Form";
-import About from "./components/elements/About";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import $ from "jquery";
 
 function App() {
@@ -63,7 +63,9 @@ function App() {
       }
     ]
   };
+  const { innerWidth: width, innerHeight: height } = window;
 
+  const [state, setstate] = useState({ nvState: 0 });
   useEffect(() => {
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
@@ -78,17 +80,28 @@ function App() {
       // console.log($("#navbar")[0].classList.add("navHide"));
       prevScrollpos = currentScrollPos;
     };
-  }, []);
+    $("a.liens").click(function(event) {
+      event.preventDefault();
+      let $href = $(this).attr("href");
+
+      $("html, body").animate(
+        {
+          // scrollTop: $("#elementtoScrollToID").offset().top
+          scrollTop: $($href).offset().top
+        },
+        200,
+        "swing",
+        () => (window.location.hash = this.hash)
+      );
+    });
+    setstate({ nvState: 1 });
+  }, width < 500);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar navbarState={state.nvState} />
       <SectionLayout imgsrc={[imgsc, altpic1, altpic2, altpic3]} />
-
-      {/* <Carousel /> */}
-      {/* <About></About> */}
+      <Carousel />
       <Form config={config} />
-      {/* <div className="test">
-      </div> */}
     </div>
   );
 }

@@ -28,6 +28,36 @@ export default class NavMenu extends Component {
           three: "something about coffe",
           four: "something about coffe"
         }
+      ],
+      shopDescText:
+        "Lorem ipsum dolor sit amet " +
+        ",consectetuer adipiscing elit.Aenean " +
+        "commodoligula eget dolor.Aenean massa " +
+        "strong.Cum sociis natoque penatibus " +
+        "etmagnis dis parturient montes, nascetur " +
+        "ridiculus mus.Donec quam felis, ",
+      navMenu: ["coffee", "cake", "juice"],
+      menuElements: [
+        ["juices", "coffes"],
+        ["milks", "stuffs", "somthing"],
+        ["one", "two", "three", "four"]
+      ],
+      elementItems: [
+        {
+          laté: "something about coffe",
+          juice_Coja: "i just write some"
+        },
+        {
+          globalMlik: "something about coffe",
+          nindjaMilk: "i just write some",
+          nothing: "i just write some"
+        },
+        {
+          one: "something about coffe",
+          tow: "something about coffe",
+          three: "something about coffe",
+          four: "something about coffe"
+        }
       ]
     };
     this.MenuContent = this.MenuContent.bind(this);
@@ -35,24 +65,21 @@ export default class NavMenu extends Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
   handleItemClickTwo = e =>
-    (e.currentTarget.nextSibling.style.display =
-      e.currentTarget.nextSibling.style.display === "none" ? "flex" : "none");
+    e.currentTarget.nextSibling.classList.toggle("showContentItem");
+
+  // (e.currentTarget.nextSibling.style.display =
+  //   e.currentTarget.nextSibling.style.display === "none" ? "flex" : "none");
 
   MenuContent = (choice, loading) => {
     if (!this.state.loading) {
       return (
         <React.Fragment>
           <Container className="ItemDesc">
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-            </p>
+            <p>{this.state.shopDescText}</p>
           </Container>
           <List className="ListMenuCoffe" link>
-            {this.state.menuHeaders.map((el, i) => {
-              let mChoices = this.state.menuChoices[i];
+            {this.state.menuElements.map((el, i) => {
+              let mChoices = this.state.elementItems[i];
               let keys = Object.keys(mChoices);
               let rChoices = [];
               for (let el of keys) {
@@ -104,27 +131,33 @@ export default class NavMenu extends Component {
             name="Coffee"
             active={activeItem === "Coffee"}
             onClick={this.handleItemClick}
-            style={{ color: activeItem === "Coffee" ? "#000" : "#fff" }}
+            style={{
+              color: activeItem === "Coffee" ? "#000" : "#fff"
+            }}
           >
-            Coffee
+            {this.state.navMenu[0]}
           </Menu.Item>
 
           <Menu.Item
             name="Cakes"
             active={activeItem === "Cakes"}
             onClick={this.handleItemClick}
-            style={{ color: activeItem === "Cakes" ? "#000" : "#fff" }}
+            style={{
+              color: activeItem === "Cakes" ? "#000" : "#fff"
+            }}
           >
-            Cakes
+            {this.state.navMenu[1]}
           </Menu.Item>
 
           <Menu.Item
             name="Juices"
             active={activeItem === "Juices"}
             onClick={this.handleItemClick}
-            style={{ color: activeItem === "Juices" ? "#000" : "#fff" }}
+            style={{
+              color: activeItem === "Juices" ? "#000" : "#fff"
+            }}
           >
-            Juices
+            {this.state.navMenu[2]}
           </Menu.Item>
         </Menu>
       </div>

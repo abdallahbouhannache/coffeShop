@@ -8,6 +8,7 @@ import About from "./About";
  * @component Form
  * @props - { object } -  config
  */
+
 class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -64,7 +65,7 @@ class Form extends React.Component {
     } = this.props.config;
     return (
       <div className="FormContainer">
-        <div className="FormWrp">
+        <div id="Contact" className="FormWrp">
           <h2>{title}</h2>
           <form action="#">
             {fieldsConfig &&

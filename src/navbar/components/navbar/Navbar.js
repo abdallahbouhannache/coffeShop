@@ -5,6 +5,8 @@ import { useSpring, animated, config } from "react-spring";
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
+import $ from "jquery";
+
 // import {Link} from react-link
 
 const Navbar = props => {
@@ -26,10 +28,18 @@ const Navbar = props => {
         <FlexContainer>
           <Brand />
           <NavLinks style={linkAnimation}>
-            <a href="/">menu</a>
-            <a href="/">contact</a>
-            <a href="/">about</a>
-            <a href="/">offers</a>
+            <a className="liens" href="#part3">
+              menu
+            </a>
+            <a className="liens" href="#part1">
+              main
+            </a>
+            <a className="liens" href="#Shop">
+              Shop
+            </a>
+            <a className="liens" href="#About">
+              contact
+            </a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
@@ -39,6 +49,7 @@ const Navbar = props => {
           </BurgerWrapper>
         </FlexContainer>
       </NavBar>
+
       <CollapseMenu
         navbarState={props.navbarState}
         handleNavbar={props.handleNavbar}

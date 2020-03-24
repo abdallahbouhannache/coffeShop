@@ -52,9 +52,12 @@ export default CollapseMenu;
 const CollapseWrapper = styled(animated.div)`
   background: #dbac1f;
   position: fixed;
-  top: 6.7rem;
+  top: 4rem;
   left: 0;
   right: 0;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavLinks = styled.ul`

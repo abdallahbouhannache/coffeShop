@@ -10,7 +10,6 @@ import "../styles/section.css";
 import { Image, Header, Menu, Segment } from "semantic-ui-react";
 import NavMenu from "../elements/NavMenu";
 
-var imgpic = "../.././assets/bg.jpg";
 var styling = {
   container: {
     backgroundImage: `url(${altpic})`,
@@ -25,7 +24,17 @@ var styling = {
 class sectionONE extends Component {
   constructor(props) {
     super(props);
-    this.state = { imgpic: "../../assets/bg.jpg" };
+    this.state = {
+      welcomeMsg: "taste how deep is those coffee beans",
+
+      picsShopCorners: [
+        require("../../assets/dish.jpg"),
+        require("../../assets/bg.jpg"),
+        require("../../assets/bg2.jpg"),
+        require("../../assets/bg3.jpg"),
+        require("../../assets/bg4.jpg")
+      ]
+    };
   }
 
   styling = {
@@ -92,11 +101,11 @@ class sectionONE extends Component {
     return (
       <React.Fragment>
         <div className="helping" style={this.styling.wraper}>
-          <div className="part1" style={this.styling.part1}>
+          <div id="part1" className="part1" style={this.styling.part1}>
             <Header style={this.styling.wclTxt} as="h1">
               CoffeShop
               <Header.Subheader style={this.styling.subWclTxt}>
-                Feel The Taste Of Joy
+                {this.state.welcomeMsg}
               </Header.Subheader>
             </Header>
           </div>
@@ -107,11 +116,11 @@ class sectionONE extends Component {
           {/* ...... */}
           {/* ...... */}
 
-          <div className="part2" style={this.styling.part2}>
+          <div id="part2" className="part2" style={this.styling.part2}>
             <div className="innerSectionWrp LeftSide ">
               <div className="picsWrp">
-                <Image src={altpic} className="imgwrp" />
-                <Image src={altpic1} className="imgwrp" />
+                <Image src={this.state.picsShopCorners[0]} className="imgwrp" />
+                <Image src={this.state.picsShopCorners[1]} className="imgwrp" />
               </div>
               <div className="textWrp">
                 <Article
@@ -140,9 +149,9 @@ class sectionONE extends Component {
                 </Header>
               </div>
               <div className="picsWrp">
-                <Image src={altpic2} className="imgwrp" />
-                <Image src={altpic3} className="imgwrp" />
-                <Image src={altpic4} className="imgwrp" />
+                <Image src={this.state.picsShopCorners[2]} className="imgwrp" />
+                <Image src={this.state.picsShopCorners[3]} className="imgwrp" />
+                <Image src={this.state.picsShopCorners[4]} className="imgwrp" />
               </div>
             </div>
           </div>
@@ -152,7 +161,7 @@ class sectionONE extends Component {
           {/* ...... */}
           {/* ...... */}
           {/* ...... */}
-          <div className="part3" style={this.styling.part3}>
+          <div id="part3" className="part3" style={this.styling.part3}>
             <Header className="navMenuHeader">Menu Of Coffee</Header>
             <NavMenu />
           </div>

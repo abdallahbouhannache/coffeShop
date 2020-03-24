@@ -67,10 +67,10 @@
 }
 
 .ListMenuCoffe .listEl {
-  display: flex;
   font-family: "Bellota", cursive;
   margin: 0;
   font-size: calc(4.5vmax - 2.5vmin);
+
 }
 
 .ListHeader {
@@ -78,6 +78,7 @@
   color: #000 !important;
   font-family: "Arapey", serif !important;
   padding: 15px 0;
+
 }
 
 .ListHeader:hover {
@@ -85,10 +86,23 @@
 }
 
 .contentItem {
-  display: none;
-
+  display: flex;
+  visibility: collapse;
   flex-direction: column;
   align-items: center;
+  transition: all 0.6s ease-in-out;
+  transform: translateY(-10px);
+  padding: 0 !important;
+  overflow: hidden;
+  height: 0;
+  opacity: 0
+}
+
+.showContentItem {
+  transform: translateY(10px);
+  visibility: visible;
+  height: 200px;
+  opacity: 1
 }
 
 .contentItem .item {
@@ -119,6 +133,7 @@
   text-align: center !important;
   display: flex;
   justify-content: center !important;
+  background: 1.1s ease box-shadow 1.1s ease color .1s ease !important;
 }
 
 /* Carousel navigator  */
@@ -207,15 +222,20 @@ h3 {
 .FormWrp {
   flex: 1;
   padding: 10px 20px 0 20px;
-
-  max-width: 90vw;
-  min-width: 420px;
+  max-width: 60vmax;
+  min-width: 50vmax;
   margin: 0 auto;
+  margin-top: 10px;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-self: center;
   height: 520px;
+  justify-content: space-evenly;
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-color: #fff;
+  border-style: solid;
 }
 
 p {
@@ -235,6 +255,7 @@ textarea {
   margin-top: 10px;
   margin-bottom: 20px;
   resize: vertical;
+
 
 }
 
@@ -305,4 +326,14 @@ input[type="submit"]:hover {
 .small-title {
   margin: 0 !important;
   padding: 10px 0 !important;
+}
+
+
+
+/* media queries  */
+
+@media only screen and (min-width: 916px) {
+  .FormWrp {
+    border-width: 0;
+  }
 }

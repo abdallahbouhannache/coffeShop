@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Segment, Header } from "semantic-ui-react";
 import "../styles/elements.css";
 
 const Article = props => {
+  const [artState, setstate] = useState({
+    coffeeParaHead: "Coffe beans from brazil",
+    coffeePara:
+      "abdallah ipsum dolor sit amet " +
+      ",consectetuer adipiscing elit.Aenean " +
+      "commodoligula eget dolor.Aenean massa " +
+      "strong.Cum sociis natoque penatibus " +
+      "etmagnis dis parturient montes, nasddcetur " +
+      "ridiculus mus.Donec quam felis, "
+  });
   let loadStatus = false;
   return (
     <Segment loading={loadStatus} className="artWrp">
@@ -11,13 +21,10 @@ const Article = props => {
       ) : (
         <>
           <Header as="h1" className="headArt">
-            {props.headContent || ""}
+            {props.headContent || artState.coffeeParaHead}
           </Header>
           <p className="paraWrp" align="justify">
-            {props.paragraph ||
-              "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo" +
-                "ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et" +
-                "magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,"}
+            {props.paragraph || artState.coffeePara}
           </p>
         </>
       )}
