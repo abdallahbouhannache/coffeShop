@@ -22,21 +22,21 @@ class Contact extends PureComponent {
   }
   render() {
     return (
-      <div id="About" class="ContactWrp">
-        <div class="half left contact-info">
-          <div class="small-title">Address</div>
+      <div id="About" className="ContactWrp">
+        <div className="half left contact-info">
+          <div className="small-title">Address</div>
           <p>
             {this.state.contactInfos["address"]}
             <strong>{this.state.contactInfos["codePostal"]}</strong>
           </p>
-          <div class="small-title">Business Hours</div>
-          <table class="business-hours" width="100%">
+          <div className="small-title">Business Hours</div>
+          <table className="business-hours" width="100%">
             <tbody>
               <tr>
-                <td class="business_hours_table_day">Monday</td>
+                <td className="business_hours_table_day">Monday</td>
                 <td
-                  class="business_hours_table_closed"
-                  colspan="2"
+                  className="business_hours_table_closed"
+                  colSpan="2"
                   align="center"
                 >
                   Closed
@@ -44,72 +44,72 @@ class Contact extends PureComponent {
               </tr>
 
               <tr>
-                <td class="business_hours_table_day">Tuesday</td>
-                <td class="business_hours_table_open">
+                <td className="business_hours_table_day">Tuesday</td>
+                <td className="business_hours_table_open">
                   {this.state.contactInfos["businessHours"]["Tuesday"]}
                 </td>
-                <td class="business_hours_table_close">
+                <td className="business_hours_table_close">
                   {this.state.contactInfos["businessHours"]["Tuesday"]}
                 </td>
               </tr>
 
               <tr>
-                <td class="business_hours_table_day">Wednesday</td>
-                <td class="business_hours_table_open">
+                <td className="business_hours_table_day">Wednesday</td>
+                <td className="business_hours_table_open">
                   {this.state.contactInfos["businessHours"]["Wednesday"]}
                 </td>
-                <td class="business_hours_table_close">
+                <td className="business_hours_table_close">
                   {this.state.contactInfos["businessHours"]["Wednesday"]}
                 </td>
               </tr>
 
               <tr>
-                <td class="business_hours_table_day">Thursday</td>
-                <td class="business_hours_table_open">
+                <td className="business_hours_table_day">Thursday</td>
+                <td className="business_hours_table_open">
                   17:30 {this.state.contactInfos["businessHours"]["Thursday"]}
                 </td>
-                <td class="business_hours_table_close">
+                <td className="business_hours_table_close">
                   23:00 {this.state.contactInfos["businessHours"]["Thursday"]}
                 </td>
               </tr>
 
               <tr>
-                <td class="business_hours_table_day">Friday </td>
-                <td class="business_hours_table_open">
+                <td className="business_hours_table_day">Friday </td>
+                <td className="business_hours_table_open">
                   17:30 {this.state.contactInfos["businessHours"]["Friday"]}
                 </td>
-                <td class="business_hours_table_close">
+                <td className="business_hours_table_close">
                   23:00 {this.state.contactInfos["businessHours"]["Friday"]}
                 </td>
               </tr>
 
               <tr>
-                <td class="business_hours_table_day">Saturday </td>
-                <td class="business_hours_table_open">
+                <td className="business_hours_table_day">Saturday </td>
+                <td className="business_hours_table_open">
                   10:00 {this.state.contactInfos["businessHours"]["Saturday"]}
                 </td>
-                <td class="business_hours_table_close">
+                <td className="business_hours_table_close">
                   14:30 (brunch)
                   {this.state.contactInfos["businessHours"]["Saturday"]}
                 </td>
               </tr>
 
               <tr>
-                <td class="business_hours_table_day"> Saturday</td>
-                <td class="business_hours_table_open">
+                <td className="business_hours_table_day"> Saturday</td>
+                <td className="business_hours_table_open">
                   17:00 {this.state.contactInfos["businessHours"]["Saturday"]}
                 </td>
-                <td class="business_hours_table_close">
+                <td className="business_hours_table_close">
                   23:00 {this.state.contactInfos["businessHours"]["Saturday"]}
                 </td>
               </tr>
 
               <tr>
-                <td class="business_hours_table_day">Sunday </td>
-                <td class="business_hours_table_open">
+                <td className="business_hours_table_day">Sunday </td>
+                <td className="business_hours_table_open">
                   10:00 {this.state.contactInfos["businessHours"]["Sunday"]}
                 </td>
-                <td class="business_hours_table_close">
+                <td className="business_hours_table_close">
                   14:30 (brunch){" "}
                   {this.state.contactInfos["businessHours"]["Sunday"]}
                 </td>
@@ -118,8 +118,8 @@ class Contact extends PureComponent {
           </table>
         </div>
 
-        <div class="half right">
-          <h3 class="small-title">Directions</h3>
+        <div className="half right">
+          <h3 className="small-title">Directions</h3>
           <h1 style={{ marginBottom: "20px" }}>
             <img
               src={require("../../assets/map.png")}

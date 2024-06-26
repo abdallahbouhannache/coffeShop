@@ -1,27 +1,32 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import GlobalStyle from "./styles/Global";
 
-class index extends Component {
-  state = {
-    navbarOpen: false
+function Index(props) {
+  const [state, setState] = useState({
+    navbarOpen: false,
+    collapsMenuPos: 25,
+  });
+
+  const handleNavbar = () => {
+    setState({ navbarOpen: !state.navbarOpen });
   };
 
-  handleNavbar = () => {
-    this.setState({ navbarOpen: !this.state.navbarOpen });
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <Navbar
-          navbarState={this.state.navbarOpen}
-          handleNavbar={this.handleNavbar}
-        />
-        <GlobalStyle />
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <Navbar
+        navbarState={state.navbarOpen}
+        collapsMenuPos={state.collapsMenuPos}
+        handleNavbar={(e) => {
+          setState({
+            collapsMenuPos: state.navbarOpen ? 25 : 0,
+            navbarOpen: !state.navbarOpen,
+          });
+        }}
+      />
+      {/* <GlobalStyle /> */}
+    </React.Fragment>
+  );
 }
 
-export default index;
+export default Index;

@@ -84,14 +84,16 @@ export default class NavMenu extends Component {
               let rChoices = [];
               for (let el of keys) {
                 rChoices.push(
-                  <List.Item className="">
+                  <List.Item className="" key={el}>
                     <span>{el}: </span>
                     <span>{mChoices[el]}</span>
                   </List.Item>
                 );
               }
-              return el.map((e, i) => (
-                <List.Item className="listEl">
+              return el.map((e, i, z) => (
+
+                <List.Item className="listEl" key={e}>
+                  
                   <List.Header
                     className="ListHeader"
                     onClick={this.handleItemClickTwo}

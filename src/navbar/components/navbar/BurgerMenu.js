@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const Burgermenu = props => {
+const Burgermenu = (props) => {
   return (
     <Wrapper onClick={props.handleNavbar}>
-      <div className={props.navbarState ? "open" : ""}>
+      <div className={props.navbarState ? "open" : "close"}>
         <span>&nbsp;</span>
         <span>&nbsp;</span>
         <span>&nbsp;</span>

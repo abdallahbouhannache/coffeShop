@@ -9,21 +9,21 @@ import $ from "jquery";
 
 // import {Link} from react-link
 
-const Navbar = props => {
+const Navbar = (props) => {
   const barAnimation = useSpring({
     from: { transform: "translate3d(0, -10rem, 0)" },
-    transform: "translate3d(0, 0, 0)"
+    transform: "translate3d(0, 0, 0)",
   });
 
   const linkAnimation = useSpring({
     from: { transform: "translate3d(0, 30px, 0)", opacity: 0 },
     to: { transform: "translate3d(0, 0, 0)", opacity: 1 },
     delay: 800,
-    config: config.wobbly
+    config: config.wobbly,
   });
 
   return (
-    <>
+    <React.Fragment>
       <NavBar id="navbar" style={barAnimation}>
         <FlexContainer>
           <Brand />
@@ -51,22 +51,25 @@ const Navbar = props => {
       </NavBar>
 
       <CollapseMenu
+      collapsMenuPos={props.collapsMenuPos}
         navbarState={props.navbarState}
         handleNavbar={props.handleNavbar}
       />
-    </>
+    </React.Fragment>
   );
 };
 
-export default Navbar;
+// export default Navbar;
+export default React.memo(Navbar);
 
 const NavBar = styled(animated.nav)`
+  will-change: transform;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   background: #0c1011b4;
-  z-index: 1;
+  z-index: 10;
   font-size: 1.4rem;
   transition: all 0.33s ease-in-out;
 `;
@@ -81,6 +84,7 @@ const FlexContainer = styled.div`
 `;
 
 const NavLinks = styled(animated.ul)`
+  will-change: transform, opacity;
   justify-self: end;
   list-style-type: none;
   margin: auto 0;
@@ -108,6 +112,7 @@ const NavLinks = styled(animated.ul)`
 
 const BurgerWrapper = styled.div`
   margin: auto 0;
+  border: "10px solid red";
 
   @media (min-width: 769px) {
     display: none;

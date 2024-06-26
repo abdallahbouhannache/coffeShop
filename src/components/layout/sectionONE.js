@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import BgCont from "./BgContainer";
 import Article from "../elements/Article";
-import altpic from "../../assets/bg.jpg";
-import altpic1 from "../../assets/bg2.jpg";
-import altpic2 from "../../assets/bg3.jpg";
-import altpic3 from "../../assets/bg4.jpg";
-import altpic4 from "../../assets/dish.jpg";
+import bg from "../../assets/bg.jpg";
+import bg2 from "../../assets/bg2.jpg";
+import bg3 from "../../assets/bg3.jpg";
+import bg4 from "../../assets/bg4.jpg";
+import dish from "../../assets/dish.jpg";
 import "../styles/section.css";
 import { Image, Header, Menu, Segment } from "semantic-ui-react";
 import NavMenu from "../elements/NavMenu";
 
 var styling = {
   container: {
-    backgroundImage: `url(${altpic})`,
+    backgroundImage: `url(${bg})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -26,14 +26,6 @@ class sectionONE extends Component {
     super(props);
     this.state = {
       welcomeMsg: "taste how deep is those coffee beans",
-
-      picsShopCorners: [
-        require("../../assets/dish.jpg"),
-        require("../../assets/bg.jpg"),
-        require("../../assets/bg2.jpg"),
-        require("../../assets/bg3.jpg"),
-        require("../../assets/bg4.jpg")
-      ]
     };
   }
 
@@ -109,18 +101,12 @@ class sectionONE extends Component {
               </Header.Subheader>
             </Header>
           </div>
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
 
           <div id="part2" className="part2" style={this.styling.part2}>
             <div className="innerSectionWrp LeftSide ">
               <div className="picsWrp">
-                <Image src={this.state.picsShopCorners[0]} className="imgwrp" />
-                <Image src={this.state.picsShopCorners[1]} className="imgwrp" />
+                <Image src={dish} className="imgwrp" />
+                <Image src={bg2} className="imgwrp" />
               </div>
               <div className="textWrp">
                 <Article
@@ -149,18 +135,13 @@ class sectionONE extends Component {
                 </Header>
               </div>
               <div className="picsWrp">
-                <Image src={this.state.picsShopCorners[2]} className="imgwrp" />
-                <Image src={this.state.picsShopCorners[3]} className="imgwrp" />
-                <Image src={this.state.picsShopCorners[4]} className="imgwrp" />
+                <Image src={bg2} className="imgwrp" />
+                <Image src={bg3} className="imgwrp" />
+                <Image src={bg4} className="imgwrp" />
               </div>
             </div>
           </div>
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
-          {/* ...... */}
+
           <div id="part3" className="part3" style={this.styling.part3}>
             <Header className="navMenuHeader">Menu Of Coffee</Header>
             <NavMenu />
@@ -171,4 +152,6 @@ class sectionONE extends Component {
   }
 }
 
-export default sectionONE;
+// export default sectionONE;
+export default React.memo(sectionONE);
+
